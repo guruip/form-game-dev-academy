@@ -1,0 +1,48 @@
+.tooltip {
+    position: fixed;
+    max-width: 320px;
+    width: 100%;
+    background-color: #FCCA00;
+    color: #fff;
+    border-radius: 5px;
+    margin-top: 140px;
+    margin-left: 70px;
+    padding: 10px;
+    box-sizing: border-box;
+    opacity: 0;
+    transform: translateY(-20px);
+    transition: opacity 0.5s, transform 0.5s;
+  }
+  
+  .tooltip.success {
+    background-color: #249F5D;
+  }
+  
+  .tooltip.fail {
+    background-color: #FC5A5A;
+  }
+  
+  .tooltip.show {
+    opacity: 1;
+    transform: translateY(0);
+  }
+  
+  .tooltip-content {
+    display: flex;
+    align-items: center;
+  }
+  
+  .tooltip-icon {
+    margin-right: 10px;
+  }
+  
+  .tooltip-message {
+    flex-grow: 1;
+  }
+  
+  .tooltip-close {
+    cursor: pointer;
+    font-weight: bold;
+    padding: 5px;
+  }
+  

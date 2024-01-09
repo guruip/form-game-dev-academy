@@ -1,0 +1,72 @@
+.user-info {
+    flex-direction: column;
+    align-items: center;
+    margin-bottom: 20px;
+  
+    img {
+      border-radius: 50%;
+      width: 100px;
+      height: 100px;
+      margin-bottom: 10px;
+    }
+  
+    h2 {
+      margin: 0;
+    }
+  }
+
+  .flex {
+    display: flex;
+  }
+  
+  .message-input {
+    margin-bottom: 20px;
+  
+    label {
+      display: block;
+      margin-bottom: 5px;
+    }
+  
+    input {
+      width: 50%;
+      padding: 8px;
+      box-sizing: border-box;
+    }
+  }
+  
+  .action-buttons {
+    button {
+      flex: 1;
+      margin-right: 10px;
+      padding: 10px;
+      cursor: pointer;
+      border: none;
+      color: #fff;
+      font-size: 14px;
+      font-weight: bold;
+      text-align: center;
+      border-radius: 5px;
+      transition: background-color 0.3s;
+  
+      &.button-warning {
+        background-color: #fcca00;
+      }
+  
+      &.button-success {
+        background-color: #249f5d;
+      }
+  
+      &.button-fail {
+        background-color: #fc5a5a;
+      }
+  
+      &.button-default {
+        background-color: #4285f4;
+      }
+  
+      &:hover {
+        filter: brightness(0.8);
+      }
+    }
+  }
+  

@@ -1,15 +1,18 @@
 import { Injectable } from '@angular/core';
+import { ApiResponseItem } from './response.types';
 
 @Injectable({
   providedIn: 'root'
 })
 export class AuthService {
 
+  public loginResponse: any;
+
   constructor() { }
 
   setTokens(token: string, refreshToken: string): void {
-    document.cookie = `token=${token}`;
-    document.cookie = `refreshToken=${refreshToken}`;
+    document.cookie = token;
+    document.cookie = refreshToken;
   }
 
   getAccessToken(): string | null {
@@ -19,6 +22,14 @@ export class AuthService {
 
   isAuthenticated(): boolean {
     return !!this.getAccessToken();
+  }
+
+  setLoginResponse(response: ApiResponseItem): void {
+    this.loginResponse = response;
+  }
+
+  getLoginResponse(): ApiResponseItem {
+    return this.loginResponse;
   }
   
 }
