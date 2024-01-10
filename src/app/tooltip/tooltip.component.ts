@@ -1,4 +1,4 @@
-import { Component, Input, OnInit } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 import { AlertTooltipService } from '../alert-tooltip.service';
 
 @Component({
@@ -8,17 +8,12 @@ import { AlertTooltipService } from '../alert-tooltip.service';
 })
 export class TooltipComponent implements OnInit {
 
-  @Input() type: 'warning' | 'success' | 'fail' = 'warning';
-  @Input() message: string = '';
-
   constructor(private alertTooltipService: AlertTooltipService) {}
 
   ngOnInit(): void {
-    // this.alertTooltipService.addTooltip(this);
   }
 
   close(): void {
-    // this.alertTooltipService.removeTooltip(this);
   }
 
 

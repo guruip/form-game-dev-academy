@@ -1,21 +1,21 @@
 <div class="user-info">
     <div class="flex">
         <img [src]= "userData?.userInfo?.userAvatar" alt="User Avatar">
-        <div>
-            <h2> {{userData?.userInfo?.userName}}</h2>
-            <p>{{userData?.userInfo?.userId}}</p>
+        <div class="userData">
+            <h3> {{userData?.userInfo?.userName}}</h3>
+            <p>ID пользователя: {{userData?.userInfo?.userId}}</p>
         </div>
     </div>
   
   <div class="message-input">
-    <label for="message">Сообщение:</label>
+    <label for="message">Сообщение</label>
     <input type="text" id="message">
   </div>
   
   <div class="action-buttons">
+    <button class="button-fail">Ошибка</button>
     <button class="button-warning">Предупреждение</button>
     <button class="button-success">Успех</button>
-    <button class="button-fail">Ошибка</button>
     <button class="button-default">Стандартная</button>
   </div>
 </div>

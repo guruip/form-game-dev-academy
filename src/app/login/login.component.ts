@@ -44,7 +44,6 @@ export class LoginComponent implements OnInit {
         }});
     } else {
        alert('sdfsdfsdfs');
-      // this.alertTooltipService.showFailTooltip('Incorrect username or password');
     }
   } 
 
