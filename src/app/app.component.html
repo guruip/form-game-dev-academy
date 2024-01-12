@@ -1,4 +1,6 @@
 <router-outlet></router-outlet>
 <div class="fix">
-    <app-tooltip *ngFor="let alert of alerts$ | async" [type]="alert.type" [text]="alert.text"></app-tooltip>
+    <app-tooltip *ngFor="let alert of alerts$ | async"
+         [type]="alert.type" [text]="alert.text">
+    </app-tooltip>
 </div>

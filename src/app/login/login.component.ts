@@ -1,4 +1,4 @@
-import { Component, OnDestroy, OnInit, ViewChild } from '@angular/core';
+import { Component, OnInit, ViewChild } from '@angular/core';
 import { Router } from '@angular/router';
 import { HttpClient, HttpErrorResponse } from '@angular/common/http';
 import { AuthService } from '../auth.service';
@@ -12,12 +12,14 @@ import { TooltipComponent } from '../tooltip/tooltip.component';
   templateUrl: './login.component.html',
   styleUrls: ['./login.component.scss']
 })
-export class LoginComponent implements OnInit, OnDestroy {
+export class LoginComponent implements OnInit {
   @ViewChild('alertTooltip') alertTooltip!: TooltipComponent;
 
   private readonly LOGIN_API_URL: string = 'http://51.158.107.27:82/api/login';
-  showPassword: boolean = false;
-  form: FormGroup;
+  public showPassword: boolean = false;
+  public form: FormGroup;
+  public rememberPassword: boolean = false;
+  public password: string = '';
 
   constructor(
     private formBuilder: FormBuilder,
@@ -38,6 +40,9 @@ export class LoginComponent implements OnInit, OnDestroy {
       const loginData: { login: string; password: string } = {
         login: this.form.value.username,
         password: this.form.value.password
+      };
+      if (this.rememberPassword) {
+        console.log('Пароль сохранен:', this.password);
       };
       this.http.post<ApiResponseItem>(this.LOGIN_API_URL, loginData)
         .subscribe((response: ApiResponseItem) => {
@@ -64,10 +69,6 @@ export class LoginComponent implements OnInit, OnDestroy {
 
 
   ngOnInit(): void {
-  }
-
-  ngOnDestroy(): void {
-      // this.http.unsubscribe();
   }
 
 }

@@ -26,9 +26,9 @@ export class AlertTooltipService implements OnInit {
   }
 
   ngOnInit(): void {
-    // setTimeout(() => {
-    //   this.removeAlert(this.alertsSubject);
-    // }, 15000);
+    setTimeout(() => {
+      this.removeAlert(this.alertsSubject);
+    }, 15000);
   }
 
 }

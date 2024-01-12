@@ -21,7 +21,7 @@
            
       <label for="password">Пароль*</label>
       <input type="{{ showPassword ? 'text' : 'password' }}" id="password" name="password"
-                 formControlName="password" placeholder="Минимум 8 символов">
+                 formControlName="password" placeholder="Минимум 8 символов" [(ngModel)]="password">
       <span id="togglePassword" (click)="togglePasswordVisibility()">
         <img src="../assets/eye.png" alt="eye">
       </span>
@@ -30,7 +30,7 @@
     <div class="flex">
       <div class="form-group flex">
         <div>
-          <input class="checkbox" type="checkbox" formControlName="rememberMe">
+          <input class="checkbox" type="checkbox" [(ngModel)]="rememberPassword" formControlName="rememberMe">
         </div>
         <div>
           <p>Запомнить</p>

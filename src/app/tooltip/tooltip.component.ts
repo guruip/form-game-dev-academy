@@ -1,4 +1,4 @@
-import { Component, ElementRef, Input, OnInit, Renderer2 } from '@angular/core';
+import { Component, Input, OnInit } from '@angular/core';
 import { AlertTooltipService } from '../alert-tooltip.service';
 
 @Component({
@@ -14,14 +14,12 @@ export class TooltipComponent implements OnInit {
 
   constructor(
     private alertService: AlertTooltipService,
-    private el: ElementRef, 
-    private renderer: Renderer2
   ) {}
 
   ngOnInit() {
-    // setTimeout(() => {
-    //   this.closeToogle();
-    // }, 15000);
+    setTimeout(() => {
+      this.closeToogle();
+    }, 15000);
   }
 
   closeToogle() {

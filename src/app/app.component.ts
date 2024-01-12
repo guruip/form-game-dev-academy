@@ -8,7 +8,6 @@ import { AlertTooltipService } from './alert-tooltip.service';
 })
 export class AppComponent {
   alerts$ = this.alertService.alerts$;
-  title = 'form-GameDev-Academy';
 
   constructor(private alertService: AlertTooltipService) {}
 }
