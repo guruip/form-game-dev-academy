@@ -11,13 +11,14 @@ export class AuthService {
   constructor() { }
 
   setTokens(token: string, refreshToken: string): void {
-    document.cookie = token;
-    document.cookie = refreshToken;
+    const myObject = { token, refreshToken };
+    document.cookie = JSON.stringify(myObject);
   }
 
-  getAccessToken(): string | null {
-    const tokenCookie = document.cookie.split('; ').find(cookie => cookie.startsWith('token='));
-    return tokenCookie ? tokenCookie.split('=')[1] : null;
+  getAccessToken() {
+    const storedObject = JSON.parse(document.cookie);
+    console.log(storedObject);
+    return storedObject;
   }
 
   isAuthenticated(): boolean {

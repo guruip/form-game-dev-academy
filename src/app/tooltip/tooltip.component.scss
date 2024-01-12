@@ -1,48 +1,58 @@
-.tooltip {
-    position: fixed;
-    max-width: 320px;
-    width: 100%;
-    background-color: #FCCA00;
-    color: #fff;
-    border-radius: 5px;
-    margin-top: 140px;
-    margin-left: 70px;
-    padding: 10px;
-    box-sizing: border-box;
-    opacity: 0;
-    transform: translateY(-20px);
-    transition: opacity 0.5s, transform 0.5s;
+.custom-alert {
+  position: fixed;
+  top: 0;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 300px;
+  padding: 10px;
+  margin-top: 10px;
+  border-radius: 5px;
+  text-align: center;
+  z-index: 1000;
+
+  // &.success {
+  //   background-color: #4CAF50;
+  //   color: white;
+  // }
+
+  // &.error {
+  //   background-color: #F44336;
+  //   color: white;
+  // }
+
+  // .message {
+  //   margin-bottom: 5px;
+  // }
+
+  // .close {
+  //   cursor: pointer;
+  //   font-weight: bold;
+  //   float: right;
+  // }
+}
+
+.alert-tooltip {
+  position: fixed;
+  top: 70px; /* Скрытый вверху */ 
+  left: 50%;
+  transform: translateX(-50%);
+  padding: 15px;
+  width: 320px;
+  max-width: 100%;
+  border-radius: 5px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+  transition: top 0.5s ease-in-out;
+
+  &.warning {
+    background-color: #fcca00;
   }
-  
-  .tooltip.success {
-    background-color: #249F5D;
+
+  &.success {
+    background-color: #249f5d;
   }
-  
-  .tooltip.fail {
-    background-color: #FC5A5A;
+
+  &.fail {
+    background-color: #fc5a5a;
   }
-  
-  .tooltip.show {
-    opacity: 1;
-    transform: translateY(0);
-  }
-  
-  .tooltip-content {
-    display: flex;
-    align-items: center;
-  }
-  
-  .tooltip-icon {
-    margin-right: 10px;
-  }
-  
-  .tooltip-message {
-    flex-grow: 1;
-  }
-  
-  .tooltip-close {
-    cursor: pointer;
-    font-weight: bold;
-    padding: 5px;
-  }
-  
+}
+

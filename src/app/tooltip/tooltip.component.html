@@ -1,6 +1,8 @@
-<div class="tooltip">
-    <div class="tooltip-content">
-      <div class="tooltip-message"> errorMessage</div>
-      <div class="tooltip-close" (click)="close()">X</div>
-    </div>
+<div *ngIf="isVisible" class="alert-tooltip" [ngClass]="type">
+  <div class="custom-alert" [ngClass]="{ 'success': message && message === 'success', 'error': message && message === 'error' }">
+      <div class="message">{{ message }}</div>
+    <div class="close" (click)="close()">×</div>
+  </div>
 </div>
+
+
