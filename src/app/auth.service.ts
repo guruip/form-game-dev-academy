@@ -17,7 +17,6 @@ export class AuthService {
 
   getAccessToken() {
     const storedObject = JSON.parse(document.cookie);
-    console.log(storedObject);
     return storedObject;
   }
 

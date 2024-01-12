@@ -1,6 +1,5 @@
-import { Component, Input, OnDestroy, OnInit } from '@angular/core';
+import { Component, Input, OnInit } from '@angular/core';
 import { AlertTooltipService } from '../alert-tooltip.service';
-import { Subscription } from 'rxjs';
 
 @Component({
   selector: 'app-tooltip',
@@ -8,42 +7,21 @@ import { Subscription } from 'rxjs';
   styleUrls: ['./tooltip.component.scss']
 })
 export class TooltipComponent implements OnInit {
-  @Input() type: string = 'warning';
-  @Input() message: string = '';
-  isVisible: boolean = false;
-  private subscription!: Subscription;
+  @Input() type: string = '';
+  @Input() text: string = '';
 
-  constructor(private alertTooltipService: AlertTooltipService) {}
+  isVisible: boolean = true;
 
-  ngOnInit(): void {
-    this.subscription = this.alertTooltipService.alert$.subscribe(({ type, message }) => {
-      this.type = type;
-      this.message = message;
-      this.show();
-    });
-  }
+  constructor(private alertService: AlertTooltipService) {}
 
-  ngOnDestroy(): void {
-    this.subscription.unsubscribe();
-  }
-
-  show(): void {
-    this.isVisible = true;
-
+  ngOnInit() {
     setTimeout(() => {
-      this.hide();
+      this.closeToogle();
     }, 15000);
   }
 
-  hide(): void { 
+  closeToogle() {
     this.isVisible = false;
-  }
-
-  // ngOnDestroy() {
-  //   this.subscription.unsubscribe();
-  // }
-
-  close() {
-    // this.alertService.clear(this.id);
+    this.alertService.removeAlert(this);
   }
 }

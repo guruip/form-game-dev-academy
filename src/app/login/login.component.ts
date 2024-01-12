@@ -47,7 +47,7 @@ export class LoginComponent implements OnInit, OnDestroy {
               this.router.navigate(['/dashboard']);
             }
           }, (errorResponse: HttpErrorResponse) => {
-          this.alertTooltipService.show('fail', errorResponse.error.errors[0]);
+          this.showAlert('fail', errorResponse.error.errors[0]);
         });
     }
   }
@@ -56,6 +56,10 @@ export class LoginComponent implements OnInit, OnDestroy {
     this.showPassword = !this.showPassword;
     const passwordInput = document.getElementById('password') as HTMLInputElement;
     passwordInput.type = this.showPassword ? 'text' : 'password';
+  }
+
+  showAlert(type: string, text: string) {
+    this.alertTooltipService.addAlert(type, text);
   }
 
 

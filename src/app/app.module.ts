@@ -13,12 +13,12 @@ import { TooltipComponent } from './tooltip/tooltip.component';
   declarations: [
     AppComponent,
     LoginComponent,
-    DashboardComponent,
-    TooltipComponent,
+    DashboardComponent, 
+    TooltipComponent, 
   ],
   imports: [
     BrowserModule,
-    AppRoutingModule,
+    AppRoutingModule, 
     FormsModule,
     ReactiveFormsModule,
     HttpClientModule,

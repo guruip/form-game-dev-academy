@@ -1,8 +1,10 @@
-<div *ngIf="isVisible" class="alert-tooltip" [ngClass]="type">
-  <div class="custom-alert" [ngClass]="{ 'success': message && message === 'success', 'error': message && message === 'error' }">
-      <div class="message">{{ message }}</div>
-    <div class="close" (click)="close()">×</div>
+<div *ngIf="isVisible" class="custom-alert" [class.show]="isVisible" [ngClass]="type">
+  <div class="color"></div>
+  <div class="info">
+    <div class="icon"></div>
+    <div class="text">{{ text }}</div>
+    <span class="close" (click)="closeToogle()">
+      <img src="../assets/union1.png">
+    </span>
   </div>
 </div>
-
-

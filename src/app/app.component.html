@@ -1,2 +1,3 @@
 <router-outlet></router-outlet>
-<app-tooltip [type]="'success'" [message]="'Успех!'" #alertTooltip></app-tooltip>
+<app-tooltip *ngFor="let alert of alerts$ | async" [type]="alert.type" [text]="alert.text"></app-tooltip>
+
