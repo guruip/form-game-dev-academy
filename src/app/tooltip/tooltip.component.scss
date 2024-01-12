@@ -1,20 +1,12 @@
 .custom-alert.show {
-  position: fixed;
-  top: 70px;
-  right: 70px;
+  position: relative;
   width: 320px;
   border-radius: 5px;
-  // transition: opacity 0.5s, transform 0.5s;
   display: flex;
   box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
-  font-size: 16px;
   overflow: hidden;
+  margin-bottom: 10px;
 }
-
-// .custom-alert.show {
-//   opacity: 1;
-//   transform: translateX(-50%) translateY(50px);
-// }
 
 .color {
   width: 5px;
@@ -68,7 +60,8 @@
 
 .close {
   position: absolute;
-  top: 30%;
+  bottom: 0;
+  top: 35%;
   right: 10px;
   cursor: pointer;
   transform: translateY(-50%);

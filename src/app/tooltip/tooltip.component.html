@@ -1,10 +1,10 @@
-<div *ngIf="isVisible" class="custom-alert" [class.show]="isVisible" [ngClass]="type">
+<div *ngIf="isVisible" class="custom-alert" [ngClass]="type + ' show'">
   <div class="color"></div>
   <div class="info">
     <div class="icon"></div>
     <div class="text">{{ text }}</div>
-    <span class="close" (click)="closeToogle()">
+    <div class="close" (click)="closeToogle()">
       <img src="../assets/union1.png">
-    </span>
+    </div>
   </div>
 </div>

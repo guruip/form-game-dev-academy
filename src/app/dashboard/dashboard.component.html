@@ -9,13 +9,13 @@
   
   <div class="message-input">
     <label for="message">Сообщение</label>
-    <input type="text" id="message">
+    <input type="text" id="message" [(ngModel)]="inputMessage">
   </div>
   
   <div class="action-buttons">
-    <button class="button-fail">Ошибка</button>
-    <button class="button-warning">Предупреждение</button>
-    <button class="button-success">Успех</button>
-    <button class="button-default">Стандартная</button>
+    <button class="button-fail" (click)="error()">Ошибка</button>
+    <button class="button-warning" (click)="warning()">Предупреждение</button>
+    <button class="button-success" (click)="success()">Успех</button>
+    <button class="button-default" (click)="message()">Стандартная</button>
   </div>
 </div>

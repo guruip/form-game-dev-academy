@@ -1,0 +1,9 @@
+.fix {
+  display: flex;
+  flex-direction: column-reverse;
+  align-items: flex-start;
+  margin: 10px;
+  position: fixed;
+  top: 70px;
+  right: 70px;
+}

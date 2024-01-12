@@ -1,17 +1,23 @@
-import { Injectable } from '@angular/core';
+import { Injectable, OnInit } from '@angular/core';
 import { BehaviorSubject } from 'rxjs';
 
 
 @Injectable({
   providedIn: 'root'
 })
-export class AlertTooltipService {
+export class AlertTooltipService implements OnInit {
   private alertsSubject = new BehaviorSubject<any[]>([]);
   public alerts$ = this.alertsSubject.asObservable();
 
   addAlert(type: string, text: string) {
     const alert = { type, text };
-    this.alertsSubject.next([...this.alertsSubject.value, alert]);
+
+    const currentAlerts = this.alertsSubject.value;
+
+    if (currentAlerts.length >= 3) {
+      currentAlerts.shift();
+    } 
+    this.alertsSubject.next([...currentAlerts, alert]);
   }
 
   removeAlert(alert: any) {
@@ -19,5 +25,10 @@ export class AlertTooltipService {
     this.alertsSubject.next(alerts);
   }
 
-  
+  ngOnInit(): void {
+    // setTimeout(() => {
+    //   this.removeAlert(this.alertsSubject);
+    // }, 15000);
+  }
+
 }
