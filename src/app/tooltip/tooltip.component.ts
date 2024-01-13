@@ -10,7 +10,7 @@ export class TooltipComponent implements OnInit {
   @Input() type: string = '';
   @Input() text: string = '';
 
-  isVisible: boolean = true;
+  public isVisible: boolean = true;
 
   constructor(
     private alertService: AlertTooltipService,
@@ -22,7 +22,7 @@ export class TooltipComponent implements OnInit {
     }, 15000);
   }
 
-  closeToogle() {
+  public closeToogle(): void {
     this.isVisible = false;
     this.alertService.removeAlert(this);
   }

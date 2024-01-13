@@ -7,7 +7,7 @@ import { AlertTooltipService } from './alert-tooltip.service';
   styleUrls: ['./app.component.scss']
 })
 export class AppComponent {
-  alerts$ = this.alertService.alerts$;
+  public alerts$ = this.alertService.alerts$;
 
   constructor(private alertService: AlertTooltipService) {}
 }

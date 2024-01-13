@@ -9,7 +9,7 @@ export class AlertTooltipService implements OnInit {
   private alertsSubject = new BehaviorSubject<any[]>([]);
   public alerts$ = this.alertsSubject.asObservable();
 
-  addAlert(type: string, text: string) {
+  public addAlert(type: string, text: string): void {
     const alert = { type, text };
 
     const currentAlerts = this.alertsSubject.value;
@@ -20,7 +20,7 @@ export class AlertTooltipService implements OnInit {
     this.alertsSubject.next([...currentAlerts, alert]);
   }
 
-  removeAlert(alert: any) {
+  public removeAlert(alert: any): void {
     const alerts = this.alertsSubject.value.filter((a) => a !== alert);
     this.alertsSubject.next(alerts);
   }

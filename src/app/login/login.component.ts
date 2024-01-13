@@ -35,7 +35,7 @@ export class LoginComponent implements OnInit {
     })
   }
 
-  onSubmit(): void {
+  public onSubmit(): void {
     if (this.form.valid) {
       const loginData: { login: string; password: string } = {
         login: this.form.value.username,
@@ -57,16 +57,15 @@ export class LoginComponent implements OnInit {
     }
   }
 
-  togglePasswordVisibility(): void {
+  public togglePasswordVisibility(): void {
     this.showPassword = !this.showPassword;
     const passwordInput = document.getElementById('password') as HTMLInputElement;
     passwordInput.type = this.showPassword ? 'text' : 'password';
   }
 
-  showAlert(type: string, text: string) {
+  public showAlert(type: string, text: string): void {
     this.alertTooltipService.addAlert(type, text);
   }
-
 
   ngOnInit(): void {
   }

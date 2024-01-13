@@ -10,25 +10,25 @@ export class AuthService {
 
   constructor() { }
 
-  setTokens(token: string, refreshToken: string): void {
+  public setTokens(token: string, refreshToken: string): void {
     const myObject = { token, refreshToken };
     document.cookie = JSON.stringify(myObject);
   }
 
-  getAccessToken() {
+  public getAccessToken() {
     const storedObject = JSON.parse(document.cookie);
     return storedObject;
   }
 
-  isAuthenticated(): boolean {
+  public isAuthenticated(): boolean {
     return !!this.getAccessToken();
   }
 
-  setLoginResponse(response: ApiResponseItem): void {
+  public setLoginResponse(response: ApiResponseItem): void {
     this.loginResponse = response;
   }
 
-  getLoginResponse(): ApiResponseItem {
+  public getLoginResponse(): ApiResponseItem {
     return this.loginResponse;
   }
   
